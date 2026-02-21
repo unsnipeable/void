@@ -3,6 +3,7 @@ A Discord bot displays a player's Hypixel Bedwars void stats.
 
 # installation
 [Guild install](https://discord.com/oauth2/authorize?client_id=1467799837708910594&permissions=8&integration_type=1&scope=applications.commands+bot)
+
 [User install](https://discord.com/oauth2/authorize?client_id=1467799837708910594&integration_type=1&scope=applications.commands)
 
 # how to use
