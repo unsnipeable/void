@@ -1,0 +1,89 @@
+{
+  "1260479523972059210": {
+    "username": "mtnklmao",
+    "stats": {
+      "name": "mtnklmao",
+      "star": 20,
+      "rank": "[VIP] ",
+      "discordId": "unsnipeable",
+      "overall": {
+        "kills": 231,
+        "deaths": 501,
+        "finalKills": 241,
+        "finalDeaths": 4
+      },
+      "eight_one": {
+        "kills": 0,
+        "deaths": 1,
+        "finalKills": 1,
+        "finalDeaths": 0
+      },
+      "eight_two": {
+        "kills": 15,
+        "deaths": 44,
+        "finalKills": 19,
+        "finalDeaths": 1
+      },
+      "four_three": {
+        "kills": 107,
+        "deaths": 167,
+        "finalKills": 84,
+        "finalDeaths": 0
+      },
+      "four_four": {
+        "kills": 107,
+        "deaths": 288,
+        "finalKills": 137,
+        "finalDeaths": 3
+      },
+      "two_four": {
+        "kills": 2,
+        "deaths": 1,
+        "finalKills": 0,
+        "finalDeaths": 0
+      },
+      "castle": {
+        "kills": 0,
+        "deaths": 3,
+        "finalKills": 1,
+        "finalDeaths": 0
+      },
+      "rush": {
+        "kills": 0,
+        "deaths": 0,
+        "finalKills": 0,
+        "finalDeaths": 0
+      },
+      "lucky": {
+        "kills": 3,
+        "deaths": 13,
+        "finalKills": 8,
+        "finalDeaths": 1
+      },
+      "swap": {
+        "kills": 0,
+        "deaths": 0,
+        "finalKills": 0,
+        "finalDeaths": 0
+      },
+      "ultimate": {
+        "kills": 0,
+        "deaths": 1,
+        "finalKills": 0,
+        "finalDeaths": 1
+      },
+      "voidless": {
+        "kills": 0,
+        "deaths": 0,
+        "finalKills": 0,
+        "finalDeaths": 0
+      },
+      "underworld": {
+        "kills": 0,
+        "deaths": 0,
+        "finalKills": 0,
+        "finalDeaths": 0
+      }
+    }
+  }
+}
