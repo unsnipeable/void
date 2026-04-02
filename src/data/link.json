@@ -1,16 +1,16 @@
 {
   "1260479523972059210": {
-    "username": "mtnklmao",
+    "username": "mrrawp",
     "stats": {
-      "name": "mtnklmao",
-      "star": 20,
+      "name": "mrrawp",
+      "star": 30,
       "rank": "[VIP] ",
       "discordId": "unsnipeable",
       "overall": {
-        "kills": 231,
-        "deaths": 501,
-        "finalKills": 241,
-        "finalDeaths": 4
+        "kills": 332,
+        "deaths": 677,
+        "finalKills": 353,
+        "finalDeaths": 5
       },
       "eight_one": {
         "kills": 0,
@@ -19,27 +19,27 @@
         "finalDeaths": 0
       },
       "eight_two": {
-        "kills": 15,
-        "deaths": 44,
-        "finalKills": 19,
+        "kills": 33,
+        "deaths": 58,
+        "finalKills": 30,
         "finalDeaths": 1
       },
       "four_three": {
-        "kills": 107,
-        "deaths": 167,
-        "finalKills": 84,
-        "finalDeaths": 0
+        "kills": 117,
+        "deaths": 184,
+        "finalKills": 96,
+        "finalDeaths": 1
       },
       "four_four": {
-        "kills": 107,
-        "deaths": 288,
-        "finalKills": 137,
+        "kills": 163,
+        "deaths": 400,
+        "finalKills": 214,
         "finalDeaths": 3
       },
       "two_four": {
-        "kills": 2,
-        "deaths": 1,
-        "finalKills": 0,
+        "kills": 19,
+        "deaths": 34,
+        "finalKills": 12,
         "finalDeaths": 0
       },
       "castle": {

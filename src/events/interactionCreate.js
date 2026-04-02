@@ -19,11 +19,13 @@ const {
 } = require("../utils/leaderboard");
 
 const {
-    cache,
-    CACHE_TIME,
     cooldown,
     COOLDOWN
 } = require("../utils/cooldown");
+const {
+    cache,
+    CACHE_TIME,
+} = require("../utils/cache");
 
 const {
     getGuildMembers
@@ -98,9 +100,12 @@ module.exports = (client) => {
             embed titleからIGN抽出
             */
             const username =
-                interaction.message.embeds[0].title
+                interaction.message.embeds[0].description
+                    .split("\n")[0]
                     .replace(/`/g, "")
                     .replace(/\[[^\]]*\]/g, "")
+                    .replace(/##/g, "")
+                    .replace(/ /g, "")
                     .trim();
 
             try {

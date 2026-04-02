@@ -11,7 +11,8 @@ module.exports = {
 
     data: new SlashCommandBuilder()
         .setName("unlink")
-        .setDescription("Unlink your Minecraft account"),
+        .setDescription("Unlink your Minecraft account")
+        .setDMPermission(true),
 
     async execute(interaction) {
 

@@ -8,6 +8,7 @@ const path = require("path");
 const { fetchStats } = require("../api/hypixel");
 const { buildEmbed } = require("../utils/embed");
 const { buildMenu } = require("../utils/menus");
+const { cache, CACHE_TIME } = require("../utils/cache");
 
 const linkPath = path.join(__dirname, "../data/link.json");
 
@@ -21,7 +22,8 @@ module.exports = {
                 .setName("player")
                 .setDescription("Minecraft username")
                 .setRequired(false)
-        ),
+        )
+        .setDMPermission(true),
 
     async execute(interaction) {
 
@@ -31,7 +33,6 @@ module.exports = {
 
         let username = interaction.options.getString("player");
 
-        /* link fallback */
         if (!username) {
 
             const linked = linkDB[interaction.user.id];
@@ -43,13 +44,32 @@ module.exports = {
             username = linked.username;
         }
 
-        const stats = await fetchStats(username);
+        const now = Date.now();
+        let stats;
 
-        if (!stats) {
-            return interaction.editReply("Player not found.");
+        if (cache.has(username)) {
+            const cached = cache.get(username);
+
+            if (now - cached.timestamp < CACHE_TIME) {
+                stats = cached.data;
+            } else {
+                cache.delete(username);
+            }
         }
 
-        /* save cache for leaderboard usage */
+        if (!stats) {
+            stats = await fetchStats(username);
+
+            if (!stats) {
+                return interaction.editReply("Player not found.");
+            }
+
+            cache.set(username, {
+                data: stats,
+                timestamp: now
+            });
+        }
+
         if (!linkDB[interaction.user.id]) {
             linkDB[interaction.user.id] = {};
         }
