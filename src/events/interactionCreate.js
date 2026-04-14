@@ -34,12 +34,6 @@ const {
 module.exports = (client) => {
 
     client.on("interactionCreate", async interaction => {
-
-        /*
-        =========================
-        Slash Commands
-        =========================
-        */
         if (interaction.isChatInputCommand()) {
 
             const command = client.commands.get(interaction.commandName);
@@ -80,25 +74,14 @@ module.exports = (client) => {
             return;
         }
 
-        /*
-        =========================
-        Select Menu
-        =========================
-        */
+
         if (!interaction.isStringSelectMenu()) return;
 
-        /*
-        -------------------------
-        /void mode select
-        -------------------------
-        */
         if (interaction.customId === "mode_select") {
 
             const mode = interaction.values[0];
 
-            /*
-            embed titleからIGN抽出
-            */
+
             const username =
                 interaction.message.embeds[0].description
                     .split("\n")[0]
@@ -153,68 +136,6 @@ module.exports = (client) => {
                         ephemeral: true
                     });
                 }
-            }
-        }
-
-        /*
-        -------------------------
-        leaderboard stat select
-        -------------------------
-        */
-        else if (interaction.customId === "lb_stat") {
-
-            if (!interaction.guild) {
-                return interaction.reply({
-                    content: "Guild only feature",
-                    ephemeral: true
-                });
-            }
-
-            await interaction.deferUpdate();
-
-            try {
-
-                /*
-                embed descriptionからmode取得
-                */
-                const modeLabel =
-                    interaction.message.embeds[0]
-                        .description
-                        .split("\n")[0]
-                        .split(" • ")[0];
-
-                const gamemode =
-                    Object.keys(MODES)
-                        .find(k => MODES[k] === modeLabel)
-                    ?? "overall";
-
-                const statKey = interaction.values[0];
-
-                const members =
-                    await getGuildMembers(interaction.guild);
-
-                const ranking =
-                    buildRanking(
-                        members,
-                        gamemode,
-                        statKey
-                    );
-
-                const embed =
-                    buildLBEmbed(
-                        interaction.guild,
-                        gamemode,
-                        statKey,
-                        ranking
-                    );
-
-                await interaction.message.edit({
-                    embeds: [embed],
-                    components: [buildLBMenu(statKey)]
-                });
-
-            } catch (err) {
-                console.error(err);
             }
         }
 

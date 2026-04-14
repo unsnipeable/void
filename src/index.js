@@ -21,7 +21,7 @@ for (const file of commandFiles) {
     const command = require(`./commands/${file}`);
     client.commands.set(command.data.name, command);
 }
-/* events loader */
+
 const eventFiles = fs
     .readdirSync(path.join(__dirname, "events"))
     .filter(file => file.endsWith(".js"));
